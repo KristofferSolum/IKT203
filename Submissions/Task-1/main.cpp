@@ -1,6 +1,22 @@
-﻿#include <iostream> 
+﻿#include <iostream>
+#include "Task-1.h"
 
 int main()
 {
-	return 0;
+    std::cout << "--- Running Step 1 Tests ---\n";
+    runStep1();
+
+    std::cout << "--- Running Step 2 Tests ---\n";
+    runStep2();
+
+    std::cout << "--- Running Step 3 Tests ---\n";
+    runStep3();
+
+    std::cout << "--- Running Step 4 Tests ---\n";
+    runStep4();
+
+    // wait for user input before closing (useful for some IDEs)
+    std::cout << "\nPress Enter to exit...";
+    std::cin.get();
+    return 0;
 }
