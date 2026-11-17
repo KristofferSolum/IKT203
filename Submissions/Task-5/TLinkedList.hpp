@@ -14,6 +14,8 @@ class TLinkedList {
     public:
     TLinkedList(bool ownsData = false);
     ~TLinkedList();
+    TNode<T>* GetHead() const;
+    void SetTail(TNode<T>* node);
     bool IsEmpty() const;
     int GetCount() const;
     void Append(T* data);
@@ -23,6 +25,16 @@ class TLinkedList {
     void ForEach(void (*action)(T*)) const;
     void ForEach(void (*action)(T*, void*), void* context) const;
 };
+
+template<typename T>
+TNode<T>* TLinkedList<T>::GetHead() const {
+    return head;
+}
+
+template<typename T>
+void TLinkedList<T>::SetTail(TNode<T>* node) {
+    tail = node;
+}
 
 template<typename T>
 bool TLinkedList<T>::IsEmpty() const {

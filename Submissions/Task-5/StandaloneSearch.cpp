@@ -46,3 +46,31 @@ void PrintEveryAccountInDateRange(
     const auto end = std::chrono::steady_clock::now();
     summary.timeSpentMs = std::chrono::duration<double, std::milli>(end - start).count();
 }
+
+TBankAccount* FindAccountByLastName(
+    TBankAccount** accountArray,
+    int arraySize,
+    const std::string& lastName,
+    SearchSummary& summary
+) {
+    const auto start = std::chrono::steady_clock::now();
+    summary.comparisons = 0;
+
+    for (int i = 0; i < arraySize; i++) {
+        summary.comparisons++;
+
+        if (accountArray[i]->GetOwnerLastName() == lastName) {
+            const auto end = std::chrono::steady_clock::now();
+            summary.timeSpentMs =
+                std::chrono::duration<double, std::milli>(end - start).count();
+
+            return accountArray[i];
+        }
+    }
+
+    const auto end = std::chrono::steady_clock::now();
+    summary.timeSpentMs =
+        std::chrono::duration<double, std::milli>(end - start).count();
+
+    return nullptr;
+}

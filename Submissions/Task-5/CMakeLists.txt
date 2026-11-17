@@ -6,7 +6,8 @@ add_executable(Task-5 main.cpp
         TBankAccount.h
         SerchTypes.hpp
         StandaloneSearch.h
-        StandaloneSearch.cpp)
+        StandaloneSearch.cpp
+        PopulateList.h)
 
 
 # 2. Link the Common Library

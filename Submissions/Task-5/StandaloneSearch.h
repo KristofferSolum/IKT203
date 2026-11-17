@@ -20,4 +20,10 @@ void PrintEveryAccountInDateRange(
     time_t toDate,
     SearchSummary& summary);
 
+TBankAccount* FindAccountByLastName(
+    TBankAccount** accountArray,
+    int arraySize,
+    const std::string& lastName,
+    SearchSummary& summary);
+
 #endif //STANDALONESEARCH_H

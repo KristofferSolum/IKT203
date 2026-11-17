@@ -1,6 +1,6 @@
 # 1. Define the executable name
 # This is what the students will run (e.g., Task-5.exe)
-add_executable(Task-6 main.cpp)
+add_executable(Task-6 main.cpp ../Task-5/TBankAccount.cpp ../Task-5/StandaloneSearch.cpp)
 
 # 2. Link the Common Library
 # This command connects the executable to your StructureReader code.
@@ -10,3 +10,9 @@ target_link_libraries(Task-6 PRIVATE StructureReader)
 
 # 3. Handle the Data Files (The "Structure" folder) use excaped quotes to be Linux friendly
 target_compile_definitions(Task-6 PRIVATE STRUCTURE_DIR=\"${STRUCTURE_PATH}\")
+
+configure_file(
+        "${CMAKE_CURRENT_SOURCE_DIR}/../Task-5/names.txt"
+        "${CMAKE_CURRENT_BINARY_DIR}/names.txt"
+        COPYONLY
+)

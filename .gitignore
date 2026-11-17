@@ -48,6 +48,7 @@ Thumbs.db
 # ==========================================
 .idea/
 cmake-build-*/
+.idea_backup/
 
 # ==========================================
 # Apple Xcode & iOS Development 
